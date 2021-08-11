@@ -1,0 +1,21 @@
+{
+  "printWidth": 100,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": ["**/*.txml"],
+      "options": {
+        "parser": "angular"
+      }
+    },
+    {
+      "files": ["**/*.tcss"],
+      "options": {
+        "parser": "css"
+      }
+    }
+  ]
+}

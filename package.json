@@ -1,0 +1,58 @@
+{
+  "name": "tiniapp-unique-store",
+  "version": "1.0.0",
+  "description": "A Tiki Tini App Library to connect a unique store to the state of component and page",
+  "main": "src/index.js",
+  "types": "src/*.d.ts",
+  "engines": {
+    "node": ">=9",
+    "yarn": ">=1"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development tsc --watch",
+    "build": "cross-env NODE_ENV=production tsc && yarn lint",
+    "lint": "prettier --write \"{*.ts,*.js}\"",
+    "prepublishOnly": "yarn test || yarn lint",
+    "preversion": "yarn lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cute-me-on-repos/tiniapp-unique-store.git"
+  },
+  "keywords": [
+    "redux",
+    "store",
+    "storage",
+    "tiniapp-unique-store",
+    "tini-app",
+    "tiki"
+  ],
+  "author": "Thien Ly <thien.ly@tiki.vn>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cute-me-on-repos/tiniapp-unique-store/issues"
+  },
+  "homepage": "https://github.com/cute-me-on-repos/tiniapp-unique-store#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,types,example/!(lib)}/**/*": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier": "^2.0.5",
+    "redux": "^4.1.1",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {}
+}
