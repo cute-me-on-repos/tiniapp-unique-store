@@ -1,9 +1,9 @@
 {
   "name": "tiniapp-unique-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Tiki Tini App Library to connect a unique store to the state of component and page",
-  "main": "src/index.js",
-  "types": "src/*.d.ts",
+  "main": "index.js",
+  "types": "*.d.ts",
   "engines": {
     "node": ">=9",
     "yarn": ">=1"
