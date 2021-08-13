@@ -1,6 +1,6 @@
 {
   "name": "tiniapp-unique-store",
-  "version": "1.0.1",
+  "version": "1.0.18",
   "description": "A Tiki Tini App Library to connect a unique store to the state of component and page",
   "main": "index.js",
   "types": "*.d.ts",
@@ -14,7 +14,7 @@
     "lint": "prettier --write \"{*.ts,*.js}\"",
     "prepublishOnly": "yarn test || yarn lint",
     "preversion": "yarn lint",
-    "version": "npm run format && git add -A src",
+    "version": "npm run format && git add -A .",
     "postversion": "git push && git push --tags"
   },
   "repository": {
@@ -41,12 +41,13 @@
     }
   },
   "lint-staged": {
-    "{src,types,example/!(lib)}/**/*": [
+    "{*.ts": [
       "prettier --write",
       "git add"
     ]
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.4",
     "cross-env": "^7.0.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
@@ -54,5 +55,7 @@
     "redux": "^4.1.1",
     "typescript": "^3.9.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
 }
